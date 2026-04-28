@@ -3,55 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sagvan Haji | Quantitative Economics & Data Analytics</title>
-  <meta name="description" content="Sagvan Haji - Quantitative Economics, Data Analytics, Empirical Research, and Applied Econometrics." />
+  <title>Sagvan Haji | Empirical Economics & Data Analytics</title>
+  <meta name="description" content="Sagvan Haji - Master's student in Economics specializing in empirical economics, data analytics, and applied quantitative research." />
   <style>
     :root {
-      --bg: #0b1020;
-      --bg-soft: #121a2f;
+      --bg: #0a1020;
+      --bg-soft: #10182d;
       --card: rgba(255,255,255,0.06);
-      --card-strong: rgba(255,255,255,0.1);
-      --border: rgba(255,255,255,0.12);
-      --text: #f3f7ff;
-      --muted: #b8c4d9;
-      --soft: #8b97ad;
-      --accent: #64d3ff;
-      --accent-2: #5eead4;
-      --accent-3: #8b5cf6;
-      --success: #86efac;
+      --card-2: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.10);
+      --text: #f2f7ff;
+      --muted: #b8c5db;
+      --soft: #8b99b3;
+      --accent: #70d6ff;
+      --accent-2: #67f0c1;
+      --accent-3: #8c7bff;
+      --success: #9ef5b2;
       --shadow: 0 20px 60px rgba(0,0,0,0.35);
       --radius: 22px;
-      --max: 1200px;
+      --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(100,211,255,0.12), transparent 30%),
-        radial-gradient(circle at top right, rgba(94,234,212,0.1), transparent 30%),
-        radial-gradient(circle at bottom center, rgba(139,92,246,0.12), transparent 35%),
-        linear-gradient(180deg, #09101d 0%, #0c1224 45%, #0b1020 100%);
+        radial-gradient(circle at 10% 10%, rgba(112,214,255,0.14), transparent 25%),
+        radial-gradient(circle at 85% 12%, rgba(103,240,193,0.10), transparent 22%),
+        radial-gradient(circle at 50% 100%, rgba(140,123,255,0.10), transparent 28%),
+        linear-gradient(180deg, #08101d 0%, #0b1222 45%, #0b1020 100%);
       line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle at center, black 35%, transparent 85%);
+      opacity: 0.35;
     }
 
     a {
       color: inherit;
       text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
     }
 
     .container {
@@ -62,9 +67,9 @@
     .nav {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 100;
+      background: rgba(8, 14, 26, 0.65);
       backdrop-filter: blur(18px);
-      background: rgba(9, 16, 29, 0.6);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
@@ -80,20 +85,31 @@
       display: flex;
       align-items: center;
       gap: 14px;
-      font-weight: 700;
-      letter-spacing: 0.2px;
     }
 
     .logo {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, rgba(100,211,255,0.2), rgba(94,234,212,0.18));
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: white;
+      background: linear-gradient(135deg, rgba(112,214,255,0.25), rgba(103,240,193,0.16));
       border: 1px solid rgba(255,255,255,0.12);
       box-shadow: var(--shadow);
-      font-weight: 800;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 13px;
+      color: var(--soft);
     }
 
     .nav-links {
@@ -109,18 +125,17 @@
     }
 
     .hero {
-      padding: 84px 0 48px;
+      padding: 82px 0 42px;
+      position: relative;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.35fr 0.95fr;
-      gap: 30px;
-      align-items: stretch;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 26px;
     }
 
-    .hero-copy,
-    .hero-side {
+    .glass {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 30px;
@@ -129,56 +144,56 @@
       overflow: hidden;
     }
 
-    .hero-copy {
+    .hero-main {
       padding: 42px;
     }
 
     .hero-side {
-      padding: 28px;
+      padding: 26px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 100%;
+      gap: 18px;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 9px 14px;
+      padding: 8px 14px;
       border-radius: 999px;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.08);
       color: var(--muted);
       font-size: 13px;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(42px, 7vw, 82px);
-      line-height: 0.96;
       margin: 0 0 18px;
+      font-size: clamp(42px, 8vw, 82px);
+      line-height: 0.98;
       letter-spacing: -2px;
     }
 
-    .hero h1 span {
-      background: linear-gradient(90deg, #ffffff, #9fe8ff 45%, #8ef0d7 100%);
+    h1 span {
+      background: linear-gradient(90deg, #ffffff, #9ee8ff 50%, #9ff7d9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .lead {
-      font-size: clamp(17px, 2vw, 20px);
       color: var(--muted);
+      font-size: clamp(17px, 2vw, 20px);
       max-width: 720px;
       margin-bottom: 28px;
     }
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
       gap: 14px;
+      flex-wrap: wrap;
       margin-bottom: 28px;
     }
 
@@ -186,41 +201,39 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       padding: 14px 20px;
       border-radius: 16px;
       font-weight: 700;
       border: 1px solid var(--border);
-      transition: 0.25s ease;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #64d3ff, #5eead4);
-      color: #051018;
-      border: none;
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.04);
-      color: var(--text);
+      transition: transform .25s ease, opacity .25s ease, background .25s ease;
     }
 
     .btn:hover {
       transform: translateY(-2px);
     }
 
+    .btn-primary {
+      background: linear-gradient(135deg, #70d6ff, #67f0c1);
+      color: #08131c;
+      border: none;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+    }
+
     .mini-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
-      margin-top: 16px;
     }
 
     .mini-stat {
+      padding: 16px;
+      border-radius: 18px;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 16px;
     }
 
     .mini-stat strong {
@@ -235,18 +248,17 @@
     }
 
     .panel-title {
-      margin: 0 0 14px;
-      font-size: 16px;
+      margin: 0 0 12px;
       color: var(--muted);
+      font-size: 15px;
       font-weight: 600;
     }
 
     .chart-card {
+      padding: 18px;
+      border-radius: 22px;
       background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 22px;
-      padding: 18px;
-      margin-bottom: 18px;
     }
 
     .bars {
@@ -259,24 +271,25 @@
 
     .bar {
       flex: 1;
+      min-width: 20px;
       border-radius: 14px 14px 6px 6px;
-      background: linear-gradient(180deg, rgba(100,211,255,0.95), rgba(94,234,212,0.35));
-      position: relative;
-      min-width: 22px;
+      background: linear-gradient(180deg, rgba(112,214,255,0.95), rgba(103,240,193,0.35));
+      animation: pulseBars 4s ease-in-out infinite;
+      transform-origin: bottom;
     }
 
-    .bar:nth-child(2) { height: 58%; }
-    .bar:nth-child(1) { height: 40%; }
-    .bar:nth-child(3) { height: 80%; }
-    .bar:nth-child(4) { height: 68%; }
-    .bar:nth-child(5) { height: 92%; }
-    .bar:nth-child(6) { height: 74%; }
+    .bar:nth-child(1) { height: 42%; animation-delay: 0s; }
+    .bar:nth-child(2) { height: 58%; animation-delay: .3s; }
+    .bar:nth-child(3) { height: 78%; animation-delay: .6s; }
+    .bar:nth-child(4) { height: 66%; animation-delay: .9s; }
+    .bar:nth-child(5) { height: 90%; animation-delay: 1.2s; }
+    .bar:nth-child(6) { height: 72%; animation-delay: 1.5s; }
 
     .bar-labels {
-      margin-top: 12px;
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 12px;
+      margin-top: 10px;
       color: var(--soft);
       font-size: 11px;
       text-align: center;
@@ -294,7 +307,7 @@
       border: 1px solid rgba(255,255,255,0.08);
       display: flex;
       justify-content: space-between;
-      gap: 14px;
+      gap: 10px;
     }
 
     .signal span {
@@ -308,69 +321,51 @@
     }
 
     section {
-      padding: 30px 0;
+      padding: 28px 0;
     }
 
     .section-head {
       display: flex;
-      align-items: end;
       justify-content: space-between;
+      align-items: end;
       gap: 20px;
       margin-bottom: 24px;
     }
 
     .section-head h2 {
       margin: 0;
-      font-size: clamp(28px, 4vw, 44px);
+      font-size: clamp(30px, 5vw, 44px);
       letter-spacing: -1px;
     }
 
     .section-head p {
       margin: 0;
       color: var(--muted);
-      max-width: 650px;
+      max-width: 660px;
     }
 
-    .grid-3,
-    .grid-2,
-    .projects,
-    .timeline,
-    .contact-grid {
+    .grid-2, .grid-3, .projects, .timeline, .contact-grid, .skills-grid {
       display: grid;
       gap: 18px;
     }
 
-    .grid-3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .projects {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .timeline {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contact-grid {
-      grid-template-columns: 1.1fr 0.9fr;
-    }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .projects { grid-template-columns: repeat(3, 1fr); }
+    .timeline { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1.1fr 0.9fr; }
+    .skills-grid { grid-template-columns: repeat(3, 1fr); }
 
     .card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: 24px;
       padding: 24px;
       box-shadow: var(--shadow);
     }
 
     .card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
+      margin: 0 0 10px;
       font-size: 20px;
     }
 
@@ -390,23 +385,23 @@
       padding: 9px 12px;
       border-radius: 999px;
       font-size: 13px;
-      color: var(--text);
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
     }
 
     .number {
       font-size: 34px;
       font-weight: 800;
-      line-height: 1;
       margin-bottom: 10px;
-      background: linear-gradient(90deg, #ffffff, #8fe5ff);
+      line-height: 1;
+      background: linear-gradient(90deg, #ffffff, #8fe4ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .project-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.04));
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
       border: 1px solid var(--border);
       border-radius: 26px;
       overflow: hidden;
@@ -416,22 +411,22 @@
     }
 
     .project-top {
-      padding: 26px 24px 18px;
-      min-height: 200px;
+      padding: 25px 24px 16px;
+      min-height: 210px;
       background:
-        radial-gradient(circle at top left, rgba(100,211,255,0.18), transparent 30%),
+        radial-gradient(circle at top left, rgba(112,214,255,0.18), transparent 34%),
         linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .project-top .badge {
+    .badge {
       display: inline-block;
+      margin-bottom: 14px;
       font-size: 12px;
+      color: var(--muted);
       padding: 8px 10px;
       border-radius: 999px;
       background: rgba(255,255,255,0.08);
-      color: var(--muted);
-      margin-bottom: 14px;
     }
 
     .project-top h3 {
@@ -439,8 +434,8 @@
       font-size: 24px;
     }
 
-    .project-top p {
-      margin: 0;
+    .project-top p,
+    .project-body p {
       color: var(--muted);
     }
 
@@ -464,26 +459,11 @@
       background: rgba(255,255,255,0.03);
     }
 
-    .project-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .project-links a {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
     .timeline-item {
       padding: 24px;
       border-radius: 22px;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
-      position: relative;
-      overflow: hidden;
     }
 
     .timeline-item small {
@@ -491,7 +471,6 @@
       margin-bottom: 10px;
       color: var(--accent-2);
       font-weight: 700;
-      letter-spacing: 0.3px;
     }
 
     .timeline-item h3 {
@@ -504,24 +483,18 @@
       color: var(--muted);
     }
 
-    .quote {
-      font-size: 22px;
-      line-height: 1.5;
-      color: var(--text);
-      margin: 0;
-    }
-
     .quote-box {
       padding: 30px;
       border-radius: 28px;
-      background:
-        linear-gradient(180deg, rgba(100,211,255,0.08), rgba(255,255,255,0.03));
+      background: linear-gradient(180deg, rgba(112,214,255,0.08), rgba(255,255,255,0.03));
       border: 1px solid rgba(255,255,255,0.12);
       box-shadow: var(--shadow);
     }
 
-    .contact-card {
-      min-height: 100%;
+    .quote {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.5;
     }
 
     .contact-list {
@@ -545,11 +518,12 @@
       color: var(--muted);
     }
 
-    .contact-item a {
+    .contact-item a,
+    .contact-item div:last-child {
       color: var(--accent);
       font-weight: 700;
-      word-break: break-word;
       text-align: right;
+      word-break: break-word;
     }
 
     footer {
@@ -563,21 +537,45 @@
       padding-top: 22px;
       display: flex;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
       flex-wrap: wrap;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp .9s ease forwards;
+    }
+
+    .delay-1 { animation-delay: .1s; }
+    .delay-2 { animation-delay: .2s; }
+    .delay-3 { animation-delay: .3s; }
+    .delay-4 { animation-delay: .4s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulseBars {
+      0%, 100% { transform: scaleY(1); filter: brightness(1); }
+      50% { transform: scaleY(1.06); filter: brightness(1.08); }
     }
 
     @media (max-width: 1080px) {
       .hero-grid,
-      .projects,
-      .grid-3,
       .grid-2,
+      .grid-3,
+      .projects,
       .timeline,
-      .contact-grid {
+      .contact-grid,
+      .skills-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-copy,
+      .hero-main,
       .hero-side {
         padding: 26px;
       }
@@ -593,17 +591,21 @@
         grid-template-columns: 1fr;
       }
 
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       h1 {
         letter-spacing: -1px;
       }
+    }
 
-      .section-head {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .hero {
-        padding-top: 42px;
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
@@ -613,17 +615,18 @@
     <div class="container nav-inner">
       <div class="brand">
         <div class="logo">SH</div>
-        <div>
-          <div>Sagvan Haji</div>
-          <div style="font-size:13px;color:var(--soft);font-weight:500;">Quantitative Economics • Data Analytics</div>
+        <div class="brand-text">
+          <strong>Sagvan Haji</strong>
+          <span>Empirical Economics • Data Analytics • Quantitative Research</span>
         </div>
       </div>
 
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#methods">Methods</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#background">Background</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -631,42 +634,43 @@
 
   <header class="hero">
     <div class="container hero-grid">
-      <div class="hero-copy">
-        <div class="eyebrow">Empirical research • labor economics • applied econometrics</div>
-        <h1><span>Sagvan Haji</span><br>Quantitative methods for real-world economic questions.</h1>
+      <div class="glass hero-main fade-in">
+        <div class="eyebrow">Master’s student in Economics • University of Osnabrück</div>
+        <h1><span>Sagvan Haji</span><br>Empirical economics, data analytics, and applied quantitative methods.</h1>
         <p class="lead">
-          I build research-driven analysis in economics using survey data, econometric modeling, and evidence-based quantitative methods.
-          My work focuses on job satisfaction, labor market outcomes, empirical strategy, and turning complex data into clear insight.
+          I am a Master’s student in Economics specializing in empirical economics, combining academic training in
+          econometrics and data analysis with practical experience in operations, coordination, and problem-solving.
+          My interests include labor economics, job satisfaction, applied econometrics, and data-driven decision-making.
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">View Projects</a>
-          <a class="btn btn-secondary" href="#contact">Get in Touch</a>
+          <a class="btn btn-primary" href="#projects">Explore Projects</a>
+          <a class="btn btn-secondary" href="#contact">Contact Me</a>
         </div>
 
         <div class="mini-stats">
           <div class="mini-stat">
-            <strong>Economics</strong>
-            <span>Applied research and empirical analysis</span>
+            <strong>M.Sc.</strong>
+            <span>Economics, expected Oct 2026</span>
           </div>
           <div class="mini-stat">
             <strong>Methods</strong>
-            <span>OLS, ordered probit, survey analysis</span>
+            <span>OLS, Probit, Panel Data, VAR, FE, RE</span>
           </div>
           <div class="mini-stat">
             <strong>Tools</strong>
-            <span>Stata, R, Python, Excel, visualization</span>
+            <span>Python, R, Stata, EViews, SPSS</span>
           </div>
         </div>
       </div>
 
-      <div class="hero-side">
+      <div class="glass hero-side fade-in delay-1">
         <div>
-          <p class="panel-title">Analytical focus</p>
+          <p class="panel-title">Research profile</p>
           <div class="chart-card">
-            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
-              <strong style="font-size:18px;">Research intensity overview</strong>
-              <span style="color:var(--soft);font-size:13px;">Illustrative profile</span>
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;">
+              <strong style="font-size:18px;">Analytical focus</strong>
+              <span style="color:var(--soft);font-size:13px;">Illustrative</span>
             </div>
             <div class="bars">
               <div class="bar"></div>
@@ -678,10 +682,10 @@
             </div>
             <div class="bar-labels">
               <div>Data</div>
-              <div>Models</div>
+              <div>OLS</div>
               <div>Labor</div>
-              <div>Surveys</div>
-              <div>Inference</div>
+              <div>Macro</div>
+              <div>ML</div>
               <div>Policy</div>
             </div>
           </div>
@@ -690,18 +694,9 @@
         <div>
           <p class="panel-title">Current themes</p>
           <div class="signal-list">
-            <div class="signal">
-              <span>Job satisfaction analysis</span>
-              <strong>Active</strong>
-            </div>
-            <div class="signal">
-              <span>Labor economics research</span>
-              <strong>Ongoing</strong>
-            </div>
-            <div class="signal">
-              <span>Quantitative methods portfolio</span>
-              <strong>Building</strong>
-            </div>
+            <div class="signal"><span>Determinants of job satisfaction</span><strong>Active</strong></div>
+            <div class="signal"><span>Empirical economics training</span><strong>Ongoing</strong></div>
+            <div class="signal"><span>Data analytics portfolio building</span><strong>In progress</strong></div>
           </div>
         </div>
       </div>
@@ -710,90 +705,222 @@
 
   <section id="about">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head fade-in">
         <h2>About</h2>
         <p>
-          This site presents my work in quantitative economics, data analysis, and empirical research.
-          I am especially interested in understanding how statistical methods can be used to study labor market dynamics,
-          individual well-being, and the economic patterns that shape daily life.
+          My profile combines quantitative academic work with real-world professional experience across data moderation,
+          production operations, and team leadership. I am especially interested in using data to explain economic behavior,
+          workplace outcomes, and business-related decision problems.
         </p>
       </div>
 
       <div class="grid-3">
-        <div class="card">
+        <div class="card fade-in delay-1">
           <div class="number">01</div>
-          <h3>Research Orientation</h3>
+          <h3>Academic Focus</h3>
           <p>
-            My work is centered on empirical economics, with a strong interest in survey-based analysis,
-            behavioral outcomes, and measurable drivers of job satisfaction and well-being.
+            Specialization in empirical economics with coursework in microeconometrics, macro-data science,
+            applied econometrics, and machine learning-related analytics.
           </p>
         </div>
 
-        <div class="card">
+        <div class="card fade-in delay-2">
           <div class="number">02</div>
-          <h3>Analytical Style</h3>
+          <h3>Professional Strength</h3>
           <p>
-            I value clear empirical design, interpretable models, robust reporting, and research that connects
-            statistical evidence to meaningful economic interpretation.
+            Several years of operational and supervisory experience in high-demand environments, bringing discipline,
+            structure, communication skills, and practical problem-solving into analytical work.
           </p>
         </div>
 
-        <div class="card">
+        <div class="card fade-in delay-3">
           <div class="number">03</div>
-          <h3>Professional Goal</h3>
+          <h3>Career Direction</h3>
           <p>
-            I aim to develop rigorous, policy-relevant, and data-driven research that combines quantitative depth
-            with practical insight for academic and applied settings.
+            I want to contribute to dynamic teams through data analysis, operational support, and evidence-based thinking
+            that connects technical insight with practical outcomes.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="methods">
+  <section id="education">
     <div class="container">
-      <div class="section-head">
-        <h2>Methods & Tools</h2>
-        </p>
-          These are the quantitative approaches and software environments I use most often in empirical work.
+      <div class="section-head fade-in">
+        <h2>Education</h2>
+        <p>
+          My educational path combines business economics with graduate-level specialization in empirical economics and
+          applied quantitative analysis. [file:154]
         </p>
       </div>
 
-      <div class="grid-2">
-        <div class="card">
-          <h3>Quantitative Methods</h3>
+      <div class="timeline">
+        <div class="timeline-item fade-in delay-1">
+          <small>Oct 2023 – Present</small>
+          <h3>M.Sc. in Economics</h3>
           <p>
-            My methodological toolkit includes OLS regression, ordered probit models, descriptive statistical analysis,
-            survey-based inference, model interpretation, and structured reporting for applied empirical research.
+            University of Osnabrück, Osnabrück, Germany. Expected graduation: October 2026. Specialization: Empirical Economics. [file:154]
           </p>
+        </div>
+
+        <div class="timeline-item fade-in delay-2">
+          <small>Aug 2014 – Aug 2018</small>
+          <h3>B.A. in Business Economics</h3>
+          <p>
+            University of Zakho, Dohuk, Kurdistan-Iraq. [file:154]
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:18px;">
+        <div class="card fade-in delay-3">
+          <h3>Graduate coursework highlights</h3>
+          <p>
+            Advanced Empirical Economics & Microeconometrics included applied models such as SUR, SEM, VAR, OLS, FE, RE,
+            Logit, Probit, and panel data analysis. [file:154]
+          </p>
+        </div>
+
+        <div class="card fade-in delay-4">
+          <h3>Applied projects</h3>
+          <p>
+            Coursework included projects on Germany and the Euro, determinants of job satisfaction, machine learning in
+            business analytics, and manufacturing optimization in the food production industry. [file:154]
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-head fade-in">
+        <h2>Work Experience</h2>
+        <p>
+          My work history spans digital content operations, customer-facing service, and industrial production roles with
+          increasing responsibility. [file:154]
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item fade-in delay-1">
+          <small>Oct 2024 – Present</small>
+          <h3>Content Moderator (CM)</h3>
+          <p>
+            TELUS Digital AI Data Solutions, Essen, Germany. Moderated high volumes of company data for compliance and maintained
+            more than 90% quality accuracy while processing 100+ tasks daily. [file:154]
+          </p>
+        </div>
+
+        <div class="timeline-item fade-in delay-2">
+          <small>Jan 2024 – Oct 2024</small>
+          <h3>Crew Member (Cashier)</h3>
+          <p>
+            Burger King, Osnabrück, Germany. Processed customer orders and payments and supported customer service resolution. [file:154]
+          </p>
+        </div>
+
+        <div class="timeline-item fade-in delay-3">
+          <small>Feb 2022 – Oct 2023</small>
+          <h3>Senior Operator – Production & Operations</h3>
+          <p>
+            IFFCO Group, Baghdad, Iraq. Led a team of five employees and reported production quantity, quality, and material waste
+            directly to the production manager. [file:154]
+          </p>
+        </div>
+
+        <div class="timeline-item fade-in delay-4">
+          <small>Sep 2020 – Feb 2022</small>
+          <h3>Blowmolder Operator</h3>
+          <p>
+            ZER Group, Erbil, Iraq. Operated, maintained, and lubricated blow molding machines from SMI, Bloway, and Sidel. [file:154]
+          </p>
+        </div>
+
+        <div class="timeline-item fade-in delay-1">
+          <small>Aug 2018 – Jul 2020</small>
+          <h3>Machine Operator</h3>
+          <p>
+            UB Holding, Dohuk, Iraq. Operated production machines including blow molding, filling, packing, palletizing, and CIP machines. [file:154]
+          </p>
+        </div>
+
+        <div class="timeline-item fade-in delay-2">
+          <small>May 2017 – Aug 2017</small>
+          <h3>Document Controller Intern</h3>
+          <p>
+            University of Zakho (UOZ), Dohuk, Iraq. Internship role in document control and archiving. [file:154]
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head fade-in">
+        <h2>Skills</h2>
+        <p>
+          My skills combine analytical software, machine learning fundamentals, multilingual communication, and industrial operations knowledge. [file:154]
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="card fade-in delay-1">
+          <h3>Programming & Analysis</h3>
+          <p>Python, R, Stata, EViews, SPSS. [file:154]</p>
           <div class="tag-wrap">
-            <span class="tag">OLS Regression</span>
-            <span class="tag">Ordered Probit</span>
-            <span class="tag">Survey Analysis</span>
-            <span class="tag">Applied Econometrics</span>
-            <span class="tag">Microdata</span>
-            <span class="tag">Empirical Strategy</span>
-            <span class="tag">Model Interpretation</span>
-            <span class="tag">Statistical Reporting</span>
+            <span class="tag">Python</span>
+            <span class="tag">R</span>
+            <span class="tag">Stata</span>
+            <span class="tag">EViews</span>
+            <span class="tag">SPSS</span>
           </div>
         </div>
 
-        <div class="card">
-          <h3>Research Tools</h3>
+        <div class="card fade-in delay-2">
+          <h3>Machine Learning</h3>
           <p>
-            I work across statistical and analytical software for data cleaning, estimation, visualization,
-            reproducible research workflows, and academic output preparation.
+            Regression, classification, cross-validation, gradient descent, and basic clustering. [file:154]
           </p>
           <div class="tag-wrap">
-            <span class="tag">Stata</span>
-            <span class="tag">R</span>
-            <span class="tag">Python</span>
-            <span class="tag">Excel</span>
-            <span class="tag">R Markdown</span>
-            <span class="tag">LaTeX</span>
-            <span class="tag">GitHub</span>
-            <span class="tag">Data Visualization</span>
+            <span class="tag">Regression</span>
+            <span class="tag">Classification</span>
+            <span class="tag">Cross-validation</span>
+            <span class="tag">Gradient Descent</span>
+            <span class="tag">Clustering</span>
           </div>
+        </div>
+
+        <div class="card fade-in delay-3">
+          <h3>Languages</h3>
+          <p>
+            Kurdish (native), Arabic (C2), English (C1), German (A2), Turkish (A2). [file:154]
+          </p>
+          <div class="tag-wrap">
+            <span class="tag">Kurdish</span>
+            <span class="tag">Arabic</span>
+            <span class="tag">English</span>
+            <span class="tag">German</span>
+            <span class="tag">Turkish</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:18px;">
+        <div class="card fade-in delay-4">
+          <h3>Operational Skills</h3>
+          <p>
+            Industrial machine operation including labeling, packing, palletizing, blow molding, and filling. [file:154]
+          </p>
+        </div>
+
+        <div class="card fade-in delay-1">
+          <h3>Office & Workflow Tools</h3>
+          <p>
+            Microsoft Office tools including Excel, Word, and PowerPoint, alongside academic and analytical workflow development. [file:154]
+          </p>
         </div>
       </div>
     </div>
@@ -801,150 +928,82 @@
 
   <section id="projects">
     <div class="container">
-      <div class="section-head">
-        <h2>Selected Projects</h2>
+      <div class="section-head fade-in">
+        <h2>Projects</h2>
         <p>
-          Below are example project cards you can keep, edit, rename, or expand as your portfolio grows.
+          These project areas are based on your CV and coursework, and they can later be expanded into full project pages. [file:154][web:87]
         </p>
       </div>
 
       <div class="projects">
-        <article class="project-card">
+        <article class="project-card fade-in delay-1">
           <div class="project-top">
-            <span class="badge">Featured Research</span>
-            <h3>Job Satisfaction in Germany</h3>
+            <span class="badge">Project Seminar</span>
+            <h3>Determinants of Job Satisfaction</h3>
             <p>
-              Empirical analysis of the determinants of job satisfaction using survey microdata,
-              with attention to socio-economic controls, interpretation, and model comparison.
+              An empirical project focused on identifying drivers of job satisfaction using quantitative methods and structured interpretation. [file:154]
             </p>
           </div>
           <div class="project-body">
             <div class="project-meta">
-              <span>Labor Economics</span>
-              <span>Microdata</span>
+              <span>Stata</span>
               <span>Econometrics</span>
+              <span>Labor Economics</span>
             </div>
-            <p style="color:var(--muted);margin:0;">
-              This project explores how demographic, social, and employment-related variables influence reported job satisfaction,
-              combining theory, estimation strategy, and evidence-based interpretation.
+            <p>
+              This project aligns closely with your broader interest in labor market outcomes and well-being research. [file:154]
             </p>
-            <div class="project-links">
-              <a href="#">View summary</a>
-              <a href="#">Method notes</a>
-            </div>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card fade-in delay-2">
           <div class="project-top">
-            <span class="badge">Quantitative Analysis</span>
-            <h3>Survey-Based Well-Being Modeling</h3>
+            <span class="badge">Macroeconomics Data Science</span>
+            <h3>Does Germany Benefit from the Euro?</h3>
             <p>
-              A portfolio area focused on ordinal outcomes, life satisfaction, and the design of interpretable models
-              for social and economic well-being indicators.
+              A project comparing the introduction of the euro to a counterfactual scenario in which Germany did not adopt it. [file:154]
             </p>
           </div>
           <div class="project-body">
             <div class="project-meta">
-              <span>Ordered Outcomes</span>
-              <span>Well-Being</span>
-              <span>Survey Data</span>
+              <span>R</span>
+              <span>Python</span>
+              <span>Macroeconomics</span>
             </div>
-            <p style="color:var(--muted);margin:0;">
-              The project emphasizes careful model specification, meaningful covariates, and readable communication
-              of results for non-technical and academic audiences alike.
+            <p>
+              This work reflects your ability to connect macroeconomic questions with applied data analysis. [file:154]
             </p>
-            <div class="project-links">
-              <a href="#">View summary</a>
-              <a href="#">Research direction</a>
-            </div>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card fade-in delay-3">
           <div class="project-top">
-            <span class="badge">Portfolio Development</span>
-            <h3>Applied Data Analytics Case Studies</h3>
+            <span class="badge">Machine Learning</span>
+            <h3>Business Analytics & Optimization</h3>
             <p>
-              A growing collection of smaller data projects that show practical workflow design,
-              cleaning, exploration, visualization, and analytical storytelling.
+              Coursework projects included bike-sharing analytics and optimization in food production environments. [file:154]
             </p>
           </div>
           <div class="project-body">
             <div class="project-meta">
               <span>Python</span>
-              <span>R</span>
-              <span>Visualization</span>
+              <span>Machine Learning</span>
+              <span>Optimization</span>
             </div>
-            <p style="color:var(--muted);margin:0;">
-              This section can evolve into a showcase for dashboards, data cleaning projects, comparative analyses,
-              and concise evidence-driven writeups.
+            <p>
+              These projects show a practical bridge between analytical modeling and business decision support. [file:154]
             </p>
-            <div class="project-links">
-              <a href="#">View ideas</a>
-              <a href="#">Add future work</a>
-            </div>
           </div>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="background">
-    <div class="container">
-      <div class="section-head">
-        <h2>Background</h2>
-        <p>
-          This section gives a concise narrative of academic development, research interests, and professional direction.
-        </p>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <small>Education</small>
-          <h3>Economics and empirical analysis</h3>
-          <p>
-            My academic training is rooted in economics, with a growing focus on econometrics, quantitative reasoning,
-            and evidence-based research design.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <small>Research Focus</small>
-          <h3>Labor economics and satisfaction</h3>
-          <p>
-            I am especially interested in job satisfaction, labor market outcomes, and how measurable social and economic
-            factors shape individual experiences at work.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <small>Technical Development</small>
-          <h3>Statistical tools and workflow</h3>
-          <p>
-            Alongside academic writing, I continue developing skills in Stata, R, Python, data management,
-            and presentation of quantitative findings.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <small>Direction</small>
-          <h3>From analysis to impact</h3>
-          <p>
-            My goal is to produce analytical work that is rigorous enough for research settings and clear enough
-            to be useful in practical and policy-oriented contexts.
-          </p>
-        </div>
       </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <div class="quote-box">
+      <div class="quote-box fade-in">
         <p class="quote">
-          “Quantitative research is most valuable when it does more than estimate a model —
-          it should help explain a real economic problem in a way that is clear, credible, and useful.”
+          “Quantitative research is most valuable when it connects rigorous analysis with real-world questions, clear interpretation, and practical relevance.”
         </p>
       </div>
     </div>
@@ -952,24 +1011,24 @@
 
   <section id="contact">
     <div class="container">
-      <div class="section-head">
-        <h2>Contact & Links</h2>
+      <div class="section-head fade-in">
+        <h2>Contact</h2>
         <p>
+          You can use the links below to get in touch or view more of my work. [file:154]
         </p>
       </div>
 
       <div class="contact-grid">
-        <div class="card contact-card">
+        <div class="card fade-in delay-1">
           <h3>Let’s connect</h3>
           <p>
-            If you are interested in economics, quantitative methods, data analysis, empirical research,
-            or potential collaboration, feel free to get in touch.
+            I am open to opportunities in data analysis, research support, empirical economics, and cross-functional roles that value analytical thinking and adaptability.
           </p>
 
           <div class="contact-list">
             <div class="contact-item">
               <span>Email</span>
-              <a href="mailto:sagvan1133@gmail.com">sagvan1133@gmail.com</a>
+              <a href="mailto:Sagvan1133@gmail.com">Sagvan1133@gmail.com</a>
             </div>
             <div class="contact-item">
               <span>GitHub</span>
@@ -977,34 +1036,34 @@
             </div>
             <div class="contact-item">
               <span>LinkedIn</span>
-              <a href="#" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/sagvanhaji</a>
+              <a href="https://linkedin.com/in/sagvanhaji" target="_blank" rel="noopener noreferrer">linkedin.com/in/sagvanhaji</a>
             </div>
             <div class="contact-item">
               <span>Location</span>
-              <a href="#">Celle, Germany</a>
+              <div>Celle, Germany</div>
             </div>
           </div>
         </div>
 
-        <div class="card">
+        <div class="card fade-in delay-2">
           <h3>Current profile</h3>
           <p>
-            Quantitative Economics • Data Analytics • Empirical Research • Applied Econometrics • Survey Data • Labor Economics
+            Empirical Economics • Data Analytics • Applied Econometrics • Machine Learning Foundations • Quantitative Research • Operations Experience
           </p>
 
           <div class="tag-wrap">
-            <span class="tag">Research Portfolio</span>
-            <span class="tag">Academic Website</span>
-            <span class="tag">Quantitative Methods</span>
-            <span class="tag">Data Storytelling</span>
             <span class="tag">Economics</span>
-            <span class="tag">Evidence-Based Analysis</span>
+            <span class="tag">Empirical Research</span>
+            <span class="tag">Data Analytics</span>
+            <span class="tag">Stata</span>
+            <span class="tag">Python</span>
+            <span class="tag">R</span>
           </div>
 
           <div style="margin-top:24px;padding:18px;border-radius:18px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);">
-            <strong style="display:block;margin-bottom:8px;">Test section</strong>
+            <strong style="display:block;margin-bottom:8px;">Next upgrade</strong>
             <span style="color:var(--muted);">
-              To be continoed...
+              Later, you can add downloadable CV links, full project pages, charts from your own data, and a writing section for research summaries.
             </span>
           </div>
         </div>
@@ -1015,4 +1074,8 @@
   <footer>
     <div class="container footer-box">
       <div>© 2026 Sagvan Haji</div>
-      <div>Built with
+      <div>Built with GitHub Pages • Empirical Economics • Data Analytics</div>
+    </div>
+  </footer>
+</body>
+</html>
